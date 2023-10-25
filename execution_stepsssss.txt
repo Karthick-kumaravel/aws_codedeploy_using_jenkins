@@ -1,0 +1,27 @@
+
+Step 1 - Create Two IAM roles for EC2 & Code Deploy
+Step 2 - Create 1 ec2 instances and put user data in it & attach the role created above
+#!/bin/bash
+sudo yum -y update
+sudo yum -y install ruby
+sudo yum -y install
+cd /home/ec2-user
+wget https://aws-codedeploy-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+sudo service codedeploy-agent start
+sudo service codedeploy-agent status
+sudo chkconfig codedeploy-agent on
+sudo yum install -y python-pipsudo pip install awscli 
+
+Step 3 - Create image of the instance which we will use in AutoScalingGroup. 
+Step 4 - Create Application Load Balancer. 
+Step 5 - Create Launch Configurations (attach IAM role) and than create Auto scaling group. 
+Step 6 - Create one Jenkins Instance and install jenkins software in it. 
+Step 7 - Create CodeDeploy 
+Step 8 - Create an S3 bucket. 
+Step 9 - Go to Jenkins Server install code deploy plugins & Create pipeline project,
+https://github.com/Karthick-kumaravel/aws_codedeploy_using_jenkins.git
+
+Step 10 - Build Jenkins Pipeline 
+Step 11 - Hit the ALB DNS name in browser
